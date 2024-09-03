@@ -9,9 +9,9 @@ class LakeCabin(object):
     # Welcome messages
     def show_messages(self):
         messages = [
-            "You are now at the lake side cabin",
+            "\n\tYou are now at the lake side cabin",
             "Find the map of the cabin",
-            "There seems to have trolls here; find more about them"
+            "There seems to have trolls here; find more about them\n\t"
         ]
         
         for message in messages:
@@ -24,7 +24,7 @@ class LakeCabin(object):
     def display_choices(self):
         print("""
         You're entering into the cabin,
-        You see something on the table.
+        \tYou see something on the table.\n
         """)
         
         choices = {

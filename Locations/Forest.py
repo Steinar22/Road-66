@@ -8,9 +8,9 @@ class Forest(object):
 
     def show_messages(self):  # Welcome messages
         messages = [
-            "Welcome to the Forest map",
+            "\n\tWelcome to the Forest map",
             "You must navigate through this forest",
-            "Find more about the cult revolving in the forest"
+            "Find more about the cult revolving in the forest\n\t"
         ]
         
         for message in messages:
@@ -24,7 +24,7 @@ class Forest(object):
     def display_choices(self):
         print("""
         You're entering into the forest,
-        You see a small shed.
+        \tYou see a small shed.\n
         """)
     
         choices = {

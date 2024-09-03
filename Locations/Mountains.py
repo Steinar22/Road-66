@@ -9,9 +9,9 @@ class Mountains(object):
     # Welcome messages
     def show_messages(self):
         messages = [
-            "You are now at the mountains.",
+            "\n\tYou are now at the mountains.",
             "You must find the mines.",
-            "Find more about the bear and kill it."
+            "Find more about the bear and kill it.\n\t"
         ]
         
         for message in messages:
@@ -25,7 +25,7 @@ class Mountains(object):
     def display_choices(self):
         print("""
         You're entering into a cave,
-        You see a fireplace.
+        \tYou see a fireplace.\n
         """)
     
         choices = {

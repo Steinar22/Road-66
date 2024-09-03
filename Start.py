@@ -8,7 +8,7 @@ class Start(object):
         pass
 
     def choose_map(self):
-        print("You are on Road 66. Choose the route:")
+        print("Choose the next route traveller:")
         print("1. To the Forest")
         print("2. To the Lake Cabin")
         print("3. To the Mountains")
