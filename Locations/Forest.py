@@ -69,8 +69,44 @@ class Forest(object):
              
     def cult_scene(self):
         print("You approach the dark symbol and feel a strange energy...")
-        # Add more gameplay logic here
+        print("You feel someone approaching towards you.")
+        print("1.See who they are.")
+        print("2.Hide from them.")
+        
+        choice = input("> ")
+        
+        if choice == "1":
+            print("The cult members slashed your throat.")
+        elif choice == "2":
+            print("You see a road to the highway...")
+        else :
+            self.cult_scene()
+            
+        
+            
+        
         
     def ending_scene(self):
-        print("You decide to keep moving, the forest feels eerie...")
-        # Add more gameplay logic here
+        print("You decide to keep moving; the forest feels eerie...")
+        print("You hear someone screaming.")
+        print("1. Get out of there.")
+        print("2. Investigate the scream.")
+        print("3. Cover your ears and run.")
+    
+        choice = input("> ")
+    
+        if choice == "1":
+            print("You run away but bump into a cult member. You were killed.")
+        elif choice == "2":
+            print("You move cautiously towards the scream, only to find a mysterious figure...")
+            print("They plead for help, but are they a trap?")
+        # Call a function to decide the next action
+            self.decide_help_or_run()
+        elif choice == "4":
+            print("Ignoring the scream, you push through the trees and escape the forest.")
+            print("You find yourself back at the road, but the cult is close behind!")
+        # Call a function to escape
+            self.escape_from_cult()
+        else:
+            print("Invalid choice, try again.")
+            self.ending_scene()
