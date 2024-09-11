@@ -52,7 +52,7 @@ class LakeCabin(object):
             self.core_gameplay()
             
     def core_gameplay(self):
-        print("You see a giant woman cooking.")
+        print("\tYou see a giant woman cooking.\n")
         print("What would you do?")
         print("1. Get close to her.")
         print("2. Move through the hallway.")
@@ -67,9 +67,21 @@ class LakeCabin(object):
             self.core_gameplay()
              
     def trolls_scene(self):
-        print("You approach the giant woman cautiously...")
+        print("\tYou approach the giant woman cautiously...\n")
         # Add more gameplay logic here
         
     def ending_scene(self):
-        print("You decide to move through the hallway...")
-        # Add more gameplay logic here
+        print("\tYou decide to keep moving though the hallway...\n")
+        print("A giant troll is aproaching towards you.")
+        print("1. Get out of the way.")
+        print("2.Ask the troll for help.")
+    
+        choice = input("> ")
+    
+        if choice == "1":
+            print("You found the way to the basement.")
+        elif choice == "2":
+            print("The troll ate you...")
+        else:
+            print("Invalid choice, try again.")
+            self.ending_scene()

@@ -52,7 +52,7 @@ class Forest(object):
             self.core_gameplay()
             
     def core_gameplay(self):
-        print("You see a dark symbol on a tree.")
+        print("\tYou see a dark symbol on a tree.\n")
         print("What would you do?")
         print("1. Investigate the symbol.")
         print("2. Keep moving through the forest.")
@@ -68,7 +68,7 @@ class Forest(object):
             self.core_gameplay()
              
     def cult_scene(self):
-        print("You approach the dark symbol and feel a strange energy...")
+        print("\tYou approach the dark symbol and feel a strange energy...")
         print("You feel someone approaching towards you.")
         print("1.See who they are.")
         print("2.Hide from them.")
@@ -84,15 +84,12 @@ class Forest(object):
             
         
             
-        
-        
     def ending_scene(self):
-        print("You decide to keep moving; the forest feels eerie...")
+        print("\tYou decide to keep moving; the forest feels eerie...\n")
         print("You hear someone screaming.")
         print("1. Get out of there.")
         print("2. Investigate the scream.")
-        print("3. Cover your ears and run.")
-    
+       
         choice = input("> ")
     
         if choice == "1":
@@ -100,13 +97,6 @@ class Forest(object):
         elif choice == "2":
             print("You move cautiously towards the scream, only to find a mysterious figure...")
             print("They plead for help, but are they a trap?")
-        # Call a function to decide the next action
-            self.decide_help_or_run()
-        elif choice == "4":
-            print("Ignoring the scream, you push through the trees and escape the forest.")
-            print("You find yourself back at the road, but the cult is close behind!")
-        # Call a function to escape
-            self.escape_from_cult()
         else:
             print("Invalid choice, try again.")
             self.ending_scene()

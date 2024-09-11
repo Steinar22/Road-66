@@ -73,5 +73,19 @@ class Mountains(object):
         # Add more gameplay logic here
         
     def ending_scene(self):
-        print("You decide to keep moving through the cave...")
-        # Add more gameplay logic here
+        print("You decide to keep moving though the cave...")
+        print("You saw soemthing glowing.")
+        print("1.Check what is it.")
+        print("2.Continue your way to exit.")
+        
+        choice = input("> ")
+    
+        if choice == "1":
+            print("You found the key to the mines.")
+        elif choice == "2":
+            print("You saw the bear...")
+            print("You have to climb though another way out?")
+            self.exit_climb()
+        else:
+            print("Invalid choice, try again.")
+            self.ending_scene()
