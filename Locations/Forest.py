@@ -46,10 +46,11 @@ class Forest(object):
                 print("Invalid choice. Please choose again.")
     
         if choice == 1:
-            print("You see a stash of weapons, you've acquired:")
+            print("You see a stash of weapons.")
             self.display_inventory()
-        elif choice == 2:
             self.core_gameplay()
+        elif choice == 2:
+            print("")
             
     def core_gameplay(self):
         print("\tYou see a dark symbol on a tree.\n")
@@ -61,6 +62,7 @@ class Forest(object):
          
         if choice == "1":
             self.cult_scene()
+            self.use_inventory()
         elif choice == "2":
             self.ending_scene()
         else:
@@ -76,7 +78,7 @@ class Forest(object):
         choice = input("> ")
         
         if choice == "1":
-            print("The cult members slashed your throat.")
+            print("The cult members are approaching towards you.")
         elif choice == "2":
             print("You see a road to the highway...")
         else :
@@ -100,3 +102,18 @@ class Forest(object):
         else:
             print("Invalid choice, try again.")
             self.ending_scene()
+            
+    def use_inventory(self):
+        print("\nWhich item do you want to use?")
+        print("flashlight ,  camera or crowbar?")
+        
+        choice = input("> ").lower()
+        
+        if choice == "flashlight":
+            print("You've scared the cult members , they ran away.")
+        elif choice == "camera":
+            print("You were killed by the cult members")
+        elif choice == "crwobar":
+            print("The cult members slashed your throat.")
+        else:
+            self.use_inventory()

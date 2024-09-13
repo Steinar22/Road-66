@@ -3,7 +3,7 @@ class LakeCabin(object):
         self.inventory = {
             1: "A knife",
             2: "A flare gun",
-            3: "A lighter"  # Changed key 2 to 3 for unique keys
+            3: "A lighter"  
         }
   
     # Welcome messages
@@ -48,8 +48,10 @@ class LakeCabin(object):
         if choice == 1:
             print("You see a weapons stash, you've acquired:")
             self.display_inventory()
-        elif choice == 2:
             self.core_gameplay()
+        elif choice == 2:
+            print("")
+            
             
     def core_gameplay(self):
         print("\tYou see a giant woman cooking.\n")
@@ -61,6 +63,7 @@ class LakeCabin(object):
          
         if choice == "1":
             self.trolls_scene()
+            self.use_inventory()
         elif choice == "2":
             self.ending_scene()
         else:
@@ -68,7 +71,7 @@ class LakeCabin(object):
              
     def trolls_scene(self):
         print("\tYou approach the giant woman cautiously...\n")
-        # Add more gameplay logic here
+        print("1.")
         
     def ending_scene(self):
         print("\tYou decide to keep moving though the hallway...\n")
@@ -85,3 +88,18 @@ class LakeCabin(object):
         else:
             print("Invalid choice, try again.")
             self.ending_scene()
+            
+    def use_inventory(self):
+        print("\nWhich item do you want to use?")
+        print("knife,  flare gun or lighter?")
+        
+        choice = input("> ").lower()
+        
+        if choice == "knife":
+            print("The trolls ate you")
+        elif choice == "flare gun":
+            print("You scared the trolls.")
+        elif choice == "lighter":
+            print("They put you into their stew.")
+        else:
+            self.use_inventory()

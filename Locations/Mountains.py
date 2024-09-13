@@ -49,8 +49,10 @@ class Mountains(object):
         if choice == 1:
             print("You see a stash of weapons, you've acquired:")
             self.display_inventory()
-        elif choice == 2:
             self.core_gameplay()
+        elif choice == 2:
+            print("")
+            
             
     def core_gameplay(self):
         print("You see a big grizzly bear eating a fish.")
@@ -62,6 +64,7 @@ class Mountains(object):
          
         if choice == "1":
             self.bear_scene()
+            self.use_inventory()
         elif choice == "2":
             self.ending_scene()
         else:
@@ -89,3 +92,18 @@ class Mountains(object):
         else:
             print("Invalid choice, try again.")
             self.ending_scene()
+            
+    def use_inventory(self):
+        print("\nWhich item do you want to use?\n")
+        print("Woolen gloves,  lantern or  adrenaline injection")
+        
+        choice = input("> ").lower()
+        
+        if choice == "woolen gloves":
+            print("")
+        elif choice == "lantern":
+            print("You scared the bear.")
+        elif choice == "adrenaline injection":
+            print("")
+        else:
+            self.use_inventory()
