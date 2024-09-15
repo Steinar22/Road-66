@@ -1,3 +1,7 @@
+
+import random
+
+
 class LakeCabin(object):
     def __init__(self) -> None:
         self.inventory = {
@@ -5,6 +9,13 @@ class LakeCabin(object):
             2: "A flare gun",
             3: "A lighter"  
         }
+        
+        self.deathMessages = [
+        "The world is unfair.",
+        "Maybe next  time  use some brains!",
+        "Admit it YOU'RE WEAK!",
+        "Do you still believe in Santa?"
+    ]
   
     # Welcome messages
     def show_messages(self):
@@ -50,7 +61,8 @@ class LakeCabin(object):
             self.display_inventory()
             self.core_gameplay()
         elif choice == 2:
-            print("")
+            print("You were eaten by a giant mouse")
+            self.show_death_messages()
             
             
     def core_gameplay(self):
@@ -71,7 +83,19 @@ class LakeCabin(object):
              
     def trolls_scene(self):
         print("\tYou approach the giant woman cautiously...\n")
-        print("1.")
+        print("1.Distract her.")
+        print("2.Confront her.")
+        
+        choice = input("> ")
+        
+        if choice == "1":
+            print("How would you distract her?")
+            self.use_inventory()
+        elif choice == "2":
+            print("She ate you.")
+            self.show_death_messages()
+        else:
+            self.trolls_scene()
         
     def ending_scene(self):
         print("\tYou decide to keep moving though the hallway...\n")
@@ -85,6 +109,7 @@ class LakeCabin(object):
             print("You found the way to the basement.")
         elif choice == "2":
             print("The troll ate you...")
+            self.show_death_messages()
         else:
             print("Invalid choice, try again.")
             self.ending_scene()
@@ -103,3 +128,9 @@ class LakeCabin(object):
             print("They put you into their stew.")
         else:
             self.use_inventory()
+            
+    def show_death_messages(self):
+        print(random.choice(self.deathMessages))
+        
+
+   

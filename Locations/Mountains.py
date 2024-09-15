@@ -1,3 +1,6 @@
+
+import random
+
 class Mountains(object):
     def __init__(self) -> None:
         self.inventory = {
@@ -5,6 +8,13 @@ class Mountains(object):
             2: "A lantern",
             3: "An adrenaline injection"
         }
+        
+        self.deathMessages = [
+        "The world is unfair.",
+        "Maybe next time  use some brains!",
+        "Admit it YOU'RE WEAK!",
+        "Do you still believe in Santa?"
+    ]
   
     # Welcome messages
     def show_messages(self):
@@ -51,7 +61,8 @@ class Mountains(object):
             self.display_inventory()
             self.core_gameplay()
         elif choice == 2:
-            print("")
+            print("A big stone fell onto  your head , you're dead.")
+            self.show_death_messages()
             
             
     def core_gameplay(self):
@@ -73,7 +84,17 @@ class Mountains(object):
              
     def bear_scene(self):
         print("You're approaching the bear...")
-        # Add more gameplay logic here
+        print("1.Kill the bear.")
+        print("2.Distract the bear.")
+        
+        choice = input("> ")
+        
+        if choice == "1":
+            self.use_inventory()
+        elif choice == "2":
+            print("The bear tore you apart.")
+            self.show_death_messages()
+        
         
     def ending_scene(self):
         print("You decide to keep moving though the cave...")
@@ -93,6 +114,24 @@ class Mountains(object):
             print("Invalid choice, try again.")
             self.ending_scene()
             
+    def exit_climb(self):
+        print("You start climbing to find a way out of the cave...")
+        print("1. Look for handholds.")
+        print("2. Climb quickly to escape the bear.")
+        
+        choice = input("> ")
+        
+        if choice == "1":
+            print("You found a safe route and escaped successfully!")
+            print("You made it out of the cave and are safe!")
+        elif choice == "2":
+            print("You climbed too fast and lost your grip!")
+            print("You fell into the bear's den...")
+            self.show_death_messages()
+        else:
+            self.exit_climb()
+            
+            
     def use_inventory(self):
         print("\nWhich item do you want to use?\n")
         print("Woolen gloves,  lantern or  adrenaline injection")
@@ -107,3 +146,7 @@ class Mountains(object):
             print("")
         else:
             self.use_inventory()
+            
+    def show_death_messages(self):
+        print(random.choice(self.deathMessages))
+        

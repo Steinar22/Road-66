@@ -29,6 +29,7 @@ class Start(object):
             mountains.display_choices()  
         else:
             print("You have to choose a map to continue!")
+            self.choose_map()
 
 
 start = Start()
